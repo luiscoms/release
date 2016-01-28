@@ -1,0 +1,15 @@
+{
+    "name": "luiscoms/release",
+    "description": "PHP library to increment package version and release project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luis Fernando Gomes",
+            "email": "dev@luiscoms.com.br"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    }
+}
