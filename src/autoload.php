@@ -1,6 +1,7 @@
 <?php
 
 $bootstrapPath = dirname(dirname(realpath(__FILE__))). DIRECTORY_SEPARATOR;
+
 set_include_path(
     implode(
         PATH_SEPARATOR,

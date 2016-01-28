@@ -8,7 +8,14 @@
             "email": "dev@luiscoms.com.br"
         }
     ],
-    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Release\\": "src/Release"
+        }
+    },
+    "require": {
+        "symfony/console": "^3.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^4.8"
     }
