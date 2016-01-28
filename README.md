@@ -4,7 +4,7 @@ Release
 Lightweight library to update package version according [Semantic Versioning](http://semver.org/).
 Aditionally can create git tag, commit and push
 
-Intalation
+Installation
 ----
 
     composer require luiscoms/release dev-master
