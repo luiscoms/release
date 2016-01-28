@@ -28,6 +28,7 @@
 
     <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="coverage-html" target="report/coverage" />
         <log type="testdox-text" target="php://stdout" />
     </logging>
 </phpunit>
