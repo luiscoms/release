@@ -8,12 +8,12 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Version extends Command
+class Current extends Command
 {
     protected function configure()
     {
         $this
-            ->setName('version')
+            ->setName('current')
             ->setDescription('Print the current application version')
         ;
     }

@@ -2,9 +2,9 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-use Release\Command\Version;
+use Release\Command\Current;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
-$application->add(new Version());
+$application->add(new Current());
 $application->run();
