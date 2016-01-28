@@ -18,10 +18,10 @@ set_include_path(
 );
 
 spl_autoload_register(
-    function ($class)
-    {
+    function ($class) {
         $classPath = stream_resolve_include_path(
-            str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php');
+            str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php'
+        );
         if ($classPath !== false) {
             require $classPath;
         }
