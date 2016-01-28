@@ -1,6 +1,8 @@
 Release
 ==
 
+[![Build Status](https://travis-ci.org/luiscoms/release.svg?branch=master)](https://travis-ci.org/luiscoms/release)
+
 Lightweight library to update package version according [Semantic Versioning](http://semver.org/).
 Aditionally can create git tag, commit and push
 
