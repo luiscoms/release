@@ -30,15 +30,15 @@ To view current version
 
 To update patch
 
-    vendor/bin/release --patch
+    vendor/bin/release --patch|--bugfix
     0.0.2
 
 To update minor
 
-    vendor/bin/release --minor
-    0.1.2
+    vendor/bin/release --minor|--feature
+    0.1.0
 
 To update major
 
     vendor/bin/release --major
-    1.1.2
+    1.0.0
