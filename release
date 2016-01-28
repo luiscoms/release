@@ -5,6 +5,8 @@ require __DIR__.'/vendor/autoload.php';
 use Release\Command\Current;
 use Symfony\Component\Console\Application;
 
+$command = new Current();
 $application = new Application();
-$application->add(new Current());
+$application->add($command);
+$application->setDefaultCommand($command->getName());
 $application->run();
