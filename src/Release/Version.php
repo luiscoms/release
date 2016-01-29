@@ -4,44 +4,47 @@ namespace Release;
 
 class Version
 {
-    private $major;
-    private $minor;
-    private $patch;
-    private $preRelease;
-    private $build;
+    private $_major;
+    private $_minor;
+    private $_patch;
+    private $_preRelease;
+    private $_build;
 
     public function __construct($major = 0, $minor = 0, $patch = 1, $preRelease = '', $build = '')
     {
-        $this->major = $major;
-        $this->minor = $minor;
-        $this->patch = $patch;
-        $this->preRelease = $preRelease;
-        $this->build = $build;
-    }
+        $this->_major = $major;
+        $this->_minor = $minor;
+        $this->_patch = $patch;
+        $this->_preRelease = $preRelease;
+        $this->_build = $build;
+    }//end __construct()
 
     public function updateMajor()
     {
-        $this->major += 1;
-        $this->minor = 0;
-        $this->patch = 0;
+        $this->_major += 1;
+        $this->_minor = 0;
+        $this->_patch = 0;
+        $this->_preRelease = $this->_build = '';
     }
 
     public function updateMinor()
     {
-        $this->minor += 1;
-        $this->patch = 0;
+        $this->_minor += 1;
+        $this->_patch = 0;
+        $this->_preRelease = $this->_build = '';
     }
 
     public function updatePatch()
     {
-        $this->patch += 1;
+        $this->_patch += 1;
+        $this->_preRelease = $this->_build = '';
     }
 
     public function __toString()
     {
-        $preRelease = (!empty($this->preRelease) ? '-' : '') . $this->preRelease;
-        $build = (!empty($this->build) ? '+' : '') . $this->build;
-        $versionString = $this->major . '.' . $this->minor . '.'  . $this->patch . $preRelease . $build;
+        $preRelease = (!empty($this->_preRelease) ? '-' : '') . $this->_preRelease;
+        $build = (!empty($this->_build) ? '+' : '') . $this->_build;
+        $versionString = $this->_major . '.' . $this->_minor . '.'  . $this->_patch . $preRelease . $build;
         return $versionString;
     }
 }
