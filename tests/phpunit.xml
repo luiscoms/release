@@ -29,6 +29,7 @@
     <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
         <log type="coverage-html" target="report/coverage" />
+        <log type="coverage-clover" target="report/logs/clover.xml"/>
         <log type="testdox-text" target="php://stdout" />
     </logging>
 </phpunit>
