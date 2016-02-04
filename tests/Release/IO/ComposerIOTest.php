@@ -25,9 +25,9 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         return include dirname(dirname(__DIR__)).'/fixtures/valid/static/composerio_structures.php';
     }
 
-    public function invalidFilesProvider()
+    public function invalidMissingFilesProvider()
     {
-        return include dirname(dirname(__DIR__)).'/fixtures/invalid/composerio_structures.php';
+        return include dirname(dirname(__DIR__)).'/fixtures/invalid/missing/composerio_structures.php';
     }
 
     public function validFilesToUpdateProvider()
@@ -55,7 +55,7 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider invalidFilesProvider
+     * @dataProvider invalidMissingFilesProvider
      */
     public function testMissingComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
     {
@@ -71,7 +71,7 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider validFilesToUpdateProvider
      */
-    public function testSaveVersionToComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
+    public function testSaveDataToComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
     {
         // assert that content is saved to composer file
         vfsStream::copyFromFileSystem($baseStructure);
