@@ -20,14 +20,19 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         $this->root = vfsStream::setup();
     }
 
-    public function validFilesProvider()
+    public function validStaticFilesProvider()
     {
-        return include dirname(dirname(__DIR__)).'/fixtures/valid/composerio_structures.php';
+        return include dirname(dirname(__DIR__)).'/fixtures/valid/static/composerio_structures.php';
     }
 
     public function invalidFilesProvider()
     {
         return include dirname(dirname(__DIR__)).'/fixtures/invalid/composerio_structures.php';
+    }
+
+    public function validFilesToUpdateProvider()
+    {
+        return include dirname(dirname(__DIR__)).'/fixtures/valid/save/composerio_structures.php';
     }
 
     protected function assertPreConditions()
@@ -38,11 +43,11 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider validFilesProvider
+     * @dataProvider validStaticFilesProvider
      */
-    public function testLoadComposerFileContentRecursively($expected, $projectRoot, $fromDir)
+    public function testLoadComposerFileContentRecursively($expected, $baseStructure, $projectRoot, $fromDir)
     {
-        vfsStream::copyFromFileSystem(dirname(dirname(__DIR__)).'/fixtures/valid/');
+        vfsStream::copyFromFileSystem($baseStructure);
 
         $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
         $composerIO = new ComposerIO(vfsStream::url($fullPath));
@@ -52,10 +57,10 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider invalidFilesProvider
      */
-    public function testMissingComposerFile($expected, $projectRoot, $fromDir)
+    public function testMissingComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
     {
         $this->setExpectedExceptionRegExp('Release\IO\Exception\IOException', '/composer.json not found.*/');
-        vfsStream::copyFromFileSystem(dirname(dirname(__DIR__)).'/fixtures/invalid/');
+        vfsStream::copyFromFileSystem($baseStructure);
 
         $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
         $composerIO = new ComposerIO(vfsStream::url($fullPath));
@@ -64,9 +69,9 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider validFilesProvider
+     * @dataProvider validStaticFilesProvider
      */
-    public function testSaveVersionToComposerFile($expected, $projectRoot, $fromDir)
+    public function testSaveVersionToComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
     {
         // assert that content is saved to composer file
     }
