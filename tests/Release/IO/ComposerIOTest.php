@@ -3,13 +3,11 @@
 namespace Release\IO;
 
 use org\bovigo\vfs\vfsStream;
-use org\bovigo\vfs\vfsStreamWrapper;
-use org\bovigo\vfs\vfsStreamDirectory;
 
 class ComposerIOTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var  vfsStreamDirectory
+     * @var org\bovigo\vfs\vfsStreamDirectory
      */
     private $root;
 
@@ -23,12 +21,7 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
 
     public function validFilesProvider()
     {
-        $tempdir = dirname(dirname(__DIR__)) . 'tmp';
-        // content, directory
-        return array(
-            // array('{"name": "root/path_one", "authors": [{"name": "Dev", "email": "dev@luiscoms.com.br"} ], "require": {} }', $tempdir . '/path_one')
-            array('', $tempdir . '/path_one')
-        );
+        return include dirname(dirname(__DIR__)).'/fixtures/valid/composerio_structures.php';
     }
 
     protected function assertPreConditions()
@@ -41,22 +34,13 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider validFilesProvider
      */
-    public function testLoadComposerFileContentRecursively($expected, $dir)
+    public function testLoadComposerFileContentRecursively($expected, $projectRoot, $fromDir)
     {
-        $hash = md5(microtime());
-        $root = vfsStreamWrapper::getRoot();
+        vfsStream::copyFromFileSystem(dirname(dirname(__DIR__)).'/fixtures/valid/');
 
-        $this->assertFalse($root->hasChild($hash));
-
-        $content = 'some content';
-        $file = vfsStream::newFile('composer.json')
-            ->at($root)
-            ->setContent($content);
-        // $this->assertEquals($content, vfsStream::url('composer.json'));
-        $this->assertEquals($content, $root->getChild('composer.json')->getContent());
-
-        $composerIO = new ComposerIO($dir);
-        $composerIO->load();
+        $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
+        $composerIO = new ComposerIO(vfsStream::url($fullPath));
+        // $composerIO = new ComposerIO(vfsStream::url(sprintf('%s/%s', $this->root->getName(), $projectRoot)));
         $this->assertEquals($expected, $composerIO->load());
     }
 }
