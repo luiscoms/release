@@ -3,7 +3,6 @@
 namespace Release\IO;
 
 use Release\IO\Exception\IOException;
-use Release\Version;
 
 class ComposerIO implements IO
 {
@@ -16,28 +15,34 @@ class ComposerIO implements IO
 
     public function load()
     {
+        $file = $this->getComposerFile();
+        return file_get_contents($file);
+    }
+
+    public function save($data)
+    {
+        $file = $this->getComposerFile();
+        file_put_contents($file, $data);
+    }
+
+    private function getComposerFile()
+    {
         if (!is_dir($this->_directory)) {
             throw new IOException(sprintf("%s is not a directory", $this->_directory));
         }
         if (!is_readable($this->_directory)) {
             throw new IOException(sprintf("%s is not readable", $this->_directory));
         }
-
-        $file = $this->getComposerFile($this->_directory);
+        $file = $this->getComposerFileRecursive($this->_directory);
         if ($file === false) {
             throw new IOException(sprintf("composer.json not found in %s or sub directories", $this->_directory));
         }
-
-        return file_get_contents($file);
+        return $file;
     }
 
-    public function save(Version $version)
+    private function getComposerFileRecursive($directory)
     {
-    }
-
-    private function getComposerFile($directory)
-    {
-        if (!is_dir($directory)) {
+        if (!is_dir($directory) || !is_readable($this->_directory)) {
             return false;
         }
 
@@ -51,7 +56,7 @@ class ComposerIO implements IO
         }
 
         if (!$found) {
-            return $this->getComposerFile(dirname($directory));
+            return $this->getComposerFileRecursive(dirname($directory));
         }
         return $found;
 

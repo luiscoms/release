@@ -69,10 +69,15 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider validStaticFilesProvider
+     * @dataProvider validFilesToUpdateProvider
      */
     public function testSaveVersionToComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
     {
         // assert that content is saved to composer file
+        vfsStream::copyFromFileSystem($baseStructure);
+        $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
+        $composerIO = new ComposerIO(vfsStream::url($fullPath));
+        $composerIO->save($expected);
+        $this->assertEquals($expected, $composerIO->load());
     }
 }
