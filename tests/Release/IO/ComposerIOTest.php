@@ -12,7 +12,7 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     private $root;
 
     /**
-     * set up test environmemt
+     * set up test environment
      */
     public function setUp()
     {
@@ -22,6 +22,11 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     public function validFilesProvider()
     {
         return include dirname(dirname(__DIR__)).'/fixtures/valid/composerio_structures.php';
+    }
+
+    public function invalidFilesProvider()
+    {
+        return include dirname(dirname(__DIR__)).'/fixtures/invalid/composerio_structures.php';
     }
 
     protected function assertPreConditions()
@@ -37,6 +42,19 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
     public function testLoadComposerFileContentRecursively($expected, $projectRoot, $fromDir)
     {
         vfsStream::copyFromFileSystem(dirname(dirname(__DIR__)).'/fixtures/valid/');
+
+        $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
+        $composerIO = new ComposerIO(vfsStream::url($fullPath));
+        $this->assertEquals($expected, $composerIO->load());
+    }
+
+    /**
+     * @dataProvider invalidFilesProvider
+     */
+    public function testMissingComposerFile($expected, $projectRoot, $fromDir)
+    {
+        $this->setExpectedExceptionRegExp('Release\IO\Exception\IOException', '/composer.json not found.*/');
+        vfsStream::copyFromFileSystem(dirname(dirname(__DIR__)).'/fixtures/invalid/');
 
         $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
         $composerIO = new ComposerIO(vfsStream::url($fullPath));

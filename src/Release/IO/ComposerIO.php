@@ -2,6 +2,8 @@
 
 namespace Release\IO;
 
+use Release\IO\Exception\IOException;
+
 class ComposerIO implements IO
 {
     private $_directory;
@@ -14,15 +16,15 @@ class ComposerIO implements IO
     public function load()
     {
         if (!is_dir($this->_directory)) {
-            throw new \Exception(sprintf("%s is not a directory", $this->_directory));
+            throw new IOException(sprintf("%s is not a directory", $this->_directory));
         }
         if (!is_readable($this->_directory)) {
-            throw new \Exception(sprintf("%s is not readable", $this->_directory));
+            throw new IOException(sprintf("%s is not readable", $this->_directory));
         }
 
         $file = $this->getComposerFile($this->_directory);
         if ($file === false) {
-            throw new \Exception(sprintf("composer.json not found in %s or sub directories", $this->_directory));
+            throw new IOException(sprintf("composer.json not found in %s or sub directories", $this->_directory));
         }
 
         return file_get_contents($file);
