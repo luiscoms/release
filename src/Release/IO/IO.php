@@ -2,8 +2,10 @@
 
 namespace Release\IO;
 
+use Release\Version;
+
 interface IO
 {
     public function load();
-    public function save(Release\Version $version);
+    public function save(Version $version);
 }

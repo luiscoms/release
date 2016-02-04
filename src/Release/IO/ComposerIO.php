@@ -3,6 +3,7 @@
 namespace Release\IO;
 
 use Release\IO\Exception\IOException;
+use Release\Version;
 
 class ComposerIO implements IO
 {
@@ -30,7 +31,7 @@ class ComposerIO implements IO
         return file_get_contents($file);
     }
 
-    public function save(Release\Version $version)
+    public function save(Version $version)
     {
     }
 

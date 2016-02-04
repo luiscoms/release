@@ -2,6 +2,7 @@
 
 namespace Release\IO;
 
+use Release\Version;
 use org\bovigo\vfs\vfsStream;
 
 class ComposerIOTest extends \PHPUnit_Framework_TestCase
@@ -60,5 +61,13 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         $composerIO = new ComposerIO(vfsStream::url($fullPath));
         // $composerIO = new ComposerIO(vfsStream::url(sprintf('%s/%s', $this->root->getName(), $projectRoot)));
         $this->assertEquals($expected, $composerIO->load());
+    }
+
+    /**
+     * @dataProvider validFilesProvider
+     */
+    public function testSaveVersionToComposerFile($expected, $projectRoot, $fromDir)
+    {
+        // assert that content is saved to composer file
     }
 }
