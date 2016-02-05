@@ -3,6 +3,9 @@
 # top-most EditorConfig file
 root = true
 
+[*.yml]
+insert_final_newline = true
+
 # Unix-style newlines with a newline ending every file
 [{release,*.php}]
 charset = utf-8
