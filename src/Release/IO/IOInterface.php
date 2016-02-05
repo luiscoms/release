@@ -2,7 +2,7 @@
 
 namespace Release\IO;
 
-interface IO
+interface IOInterface
 {
     public function load();
     public function save($data);

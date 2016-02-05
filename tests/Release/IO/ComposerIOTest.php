@@ -42,9 +42,9 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
 
     protected function assertPreConditions()
     {
-        $this->assertTrue(interface_exists("Release\IO\IO"), 'interface IO must exists');
+        $this->assertTrue(interface_exists("Release\IO\IOInterface"), 'interface IOInterface must exists');
         $this->assertTrue(class_exists("Release\IO\ComposerIO"), 'class ComposerIO must exists');
-        $this->assertInstanceOf("Release\IO\IO", new ComposerIO(__DIR__), 'ComposerIO must implements IO interface');
+        $this->assertInstanceOf("Release\IO\IOInterface", new ComposerIO(__DIR__), 'ComposerIO must implements IOInterface interface');
     }
 
     /**

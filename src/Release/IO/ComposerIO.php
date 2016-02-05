@@ -4,7 +4,7 @@ namespace Release\IO;
 
 use Release\IO\Exception\IOException;
 
-class ComposerIO implements IO
+class ComposerIO implements IOInterface
 {
     private $_directory;
 
