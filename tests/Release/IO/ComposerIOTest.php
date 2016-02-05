@@ -35,6 +35,11 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         return include dirname(dirname(__DIR__)).'/fixtures/valid/save/composerio_structures.php';
     }
 
+    public function invalidFilesWithoutPermissionProvider()
+    {
+        return include dirname(dirname(__DIR__)).'/fixtures/invalid/perms/composerio_structures.php';
+    }
+
     protected function assertPreConditions()
     {
         $this->assertTrue(interface_exists("Release\IO\IO"), 'interface IO must exists');
@@ -79,5 +84,17 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         $composerIO = new ComposerIO(vfsStream::url($fullPath));
         $composerIO->save($expected);
         $this->assertEquals($expected, $composerIO->load());
+    }
+
+    /**
+     * @dataProvider invalidFilesWithoutPermissionProvider
+     */
+    public function testPermissionDeniedWhenSaveComposerFile($expected, $baseStructure, $projectRoot, $fromDir)
+    {
+        $this->setExpectedExceptionRegExp('Release\IO\Exception\IOException', $expected);
+        vfsStream::copyFromFileSystem($baseStructure);
+        $fullPath = sprintf('%s/%s/%s', $this->root->getName(), $projectRoot, $fromDir);
+        $composerIO = new ComposerIO(vfsStream::url($fullPath));
+        $composerIO->save($expected);
     }
 }

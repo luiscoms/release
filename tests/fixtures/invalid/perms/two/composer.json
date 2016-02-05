@@ -1,0 +1,13 @@
+{
+    "name": "dummy/project",
+    "version": "1.5",
+    "require": {
+        "monolog/monolog": "^1.17"
+    },
+    "authors": [
+        {
+            "name": "Dev",
+            "email": "dev@luiscoms.com.br"
+        }
+    ]
+}

@@ -22,6 +22,9 @@ class ComposerIO implements IO
     public function save($data)
     {
         $file = $this->getComposerFile();
+        if (!is_writable($file)) {
+            throw new IOException(sprintf("Failed to save file %s, permission denied!", $file));
+        }
         file_put_contents($file, $data);
     }
 

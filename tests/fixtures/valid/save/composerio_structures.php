@@ -1,4 +1,6 @@
 <?php
+
+$baseStructure = dirname(__DIR__) . '/static/';
 // valid structures
 return array(
     array( # first
@@ -7,7 +9,7 @@ return array(
     "require": {}
 }
 ',
-        'baseStructure' => dirname(__DIR__) . '/static/',
+        'baseStructure' => $baseStructure,
         'projectRoot' => 'one',
         'fromDir' => '',
     ),
@@ -26,7 +28,7 @@ return array(
     ]
 }
 ',
-        'baseStructure' => dirname(__DIR__) . '/static/',
+        'baseStructure' => $baseStructure,
         'projectRoot' => 'two',
         'fromDir' => 'sub',
     ),
@@ -39,7 +41,7 @@ return array(
     }
 }
 ',
-        'baseStructure' => dirname(__DIR__) . '/static/',
+        'baseStructure' => $baseStructure,
         'projectRoot' => 'three',
         'fromDir' => 'sub/dir',
     )
