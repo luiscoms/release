@@ -2,7 +2,7 @@ Release
 ==
 
 [![Latest Stable Version](https://poser.pugx.org/luiscoms/release/v/stable)](https://packagist.org/packages/luiscoms/release) [![Latest Unstable Version](https://poser.pugx.org/luiscoms/release/v/unstable)](https://packagist.org/packages/luiscoms/release)
-[![Build Status](https://travis-ci.org/luiscoms/release.svg?branch=master)](https://travis-ci.org/luiscoms/release) [![Coverage Status](https://coveralls.io/repos/github/luiscoms/release/badge.svg?branch=master)](https://coveralls.io/github/luiscoms/release)
+[![Build Status](https://travis-ci.org/luiscoms/release.svg?branch=master)](https://travis-ci.org/luiscoms/release) [![Coverage Status](https://coveralls.io/repos/github/luiscoms/release/badge.svg?branch=master)](https://coveralls.io/github/luiscoms/release) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8e7b3800-4f6a-45a0-a06f-be3dbf6e6f96/mini.png)](https://insight.sensiolabs.com/projects/8e7b3800-4f6a-45a0-a06f-be3dbf6e6f96)
 
 Lightweight library to update package version according [Semantic Versioning](http://semver.org/).
 Aditionally can create git tag, commit and push
