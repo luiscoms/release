@@ -2,19 +2,18 @@
 // valid structures
 return array(
     array( # first
-        'expected' => '{
+        'expected' => '0.0.1',
+        'content' => '{
     "name": "dummy/project",
-    "0.0.1"
+    "version": "0.0.1"
 }
-',
-        'baseStructure' => __DIR__,
-        'projectRoot' => 'one',
-        'fromDir' => '',
+'
     ),
     array( # second
-        'expected' => '{
+        'expected' => '1.5.9',
+        'content' => '{
     "name": "dummy/project",
-    "version": "1.5",
+    "version": "1.5.9",
     "require": {
         "monolog/monolog": "^1.17"
     },
@@ -26,21 +25,16 @@ return array(
     ]
 }
 ',
-        'baseStructure' => __DIR__,
-        'projectRoot' => 'two',
-        'fromDir' => 'sub',
     ),
     array( # third
-        'expected' => '{
+        'expected' => '1.0.4',
+        'content' => '{
     "name": "dummy/project",
     "version": "1.0.4",
     "require": {
         "monolog/monolog": "^1.17"
     }
 }
-',
-        'baseStructure' => __DIR__,
-        'projectRoot' => 'three',
-        'fromDir' => 'sub/dir',
+'
     )
 );
