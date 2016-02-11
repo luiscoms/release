@@ -21,7 +21,7 @@ class Current extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
 
-        $handler = new ComposerHandler(new ComposerIO(__DIR__));
+        $handler = new ComposerHandler(new ComposerIO(getcwd()));
         $output->writeln((string) $handler->getVersion());
     }
 }
