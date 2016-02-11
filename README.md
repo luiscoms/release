@@ -1,7 +1,8 @@
 Release
 ==
 
-[![Build Status](https://travis-ci.org/luiscoms/release.svg?branch=master)](https://travis-ci.org/luiscoms/release) [![Coverage Status](https://coveralls.io/repos/github/luiscoms/release/badge.svg?branch=master)](https://coveralls.io/github/luiscoms/release?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/luiscoms/release/v/stable)](https://packagist.org/packages/luiscoms/release) [![Latest Unstable Version](https://poser.pugx.org/luiscoms/release/v/unstable)](https://packagist.org/packages/luiscoms/release)
+[![Build Status](https://travis-ci.org/luiscoms/release.svg?branch=master)](https://travis-ci.org/luiscoms/release) [![Coverage Status](https://coveralls.io/repos/github/luiscoms/release/badge.svg?branch=master)](https://coveralls.io/github/luiscoms/release)
 
 Lightweight library to update package version according [Semantic Versioning](http://semver.org/).
 Aditionally can create git tag, commit and push
