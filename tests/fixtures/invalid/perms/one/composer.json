@@ -1,0 +1,10 @@
+{
+    "name": "dummy/project",
+    "authors": [
+        {
+            "name": "Dev",
+            "email": "dev@luiscoms.com.br"
+        }
+    ],
+    "require": {}
+}

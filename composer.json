@@ -14,9 +14,12 @@
         }
     },
     "require": {
-        "symfony/console": "^3.0"
+        "symfony/console": "^3.0",
+        "naneau/semver": "^0.0.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^4.8",
+        "mikey179/vfsStream": "~1.6",
+        "satooshi/php-coveralls": "~1.0"
     }
 }

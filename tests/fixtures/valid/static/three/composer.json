@@ -1,0 +1,7 @@
+{
+    "name": "dummy/project",
+    "version": "1.0.4",
+    "require": {
+        "monolog/monolog": "^1.17"
+    }
+}
