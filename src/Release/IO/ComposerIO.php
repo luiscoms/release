@@ -50,8 +50,8 @@ class ComposerIO implements IOInterface
         }
 
         $found = false;
-        $di = new \RecursiveDirectoryIterator($directory, \FilesystemIterator::SKIP_DOTS);
-        foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
+        $di = new \DirectoryIterator($directory);
+        foreach ($di as $filename => $file) {
             if ($file->getFileName() === "composer.json") {
                 $found = $file->getPathname();
                 break;

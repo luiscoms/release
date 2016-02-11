@@ -18,6 +18,6 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute(array('command' => $command->getName()));
 
-        $this->assertRegExp("/1\.0\.0/", $commandTester->getDisplay());
+        $this->assertRegExp("/0\.0\.1/", $commandTester->getDisplay());
     }
 }

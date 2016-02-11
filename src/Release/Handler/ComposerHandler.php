@@ -30,7 +30,7 @@ class ComposerHandler extends Handler
 
     private function parseVersion()
     {
-        $ret = array(0, 0, 0, '', '');
+        $ret = array(0, 0, 1, '', '');
         $json = json_decode($this->_io->load(), true);
         if (empty($json)) {
             // throw new \InvalidArgumentException("Invalid ");
