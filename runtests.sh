@@ -8,4 +8,4 @@ if [ $? != 0 ]; then
 fi
 
 docker run -it -v ${PWD}:/release luiscoms/release chmod 444 tests/fixtures/invalid/perms/*/composer.json
-docker run -it -v ${PWD}:/release luiscoms/release phpunit -vc tests/
+docker run -it -v ${PWD}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit -vc tests/
