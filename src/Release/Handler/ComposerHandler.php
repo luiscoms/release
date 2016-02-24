@@ -6,7 +6,7 @@ use Naneau\SemVer\Parser;
 use Release\IO\ComposerIO;
 use Release\Version;
 
-class ComposerHandler extends Handler
+class ComposerHandler extends AbstractHandler
 {
     private $_io;
 

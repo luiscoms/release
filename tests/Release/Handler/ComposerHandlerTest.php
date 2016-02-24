@@ -6,10 +6,10 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
 {
     protected function assertPreConditions()
     {
-        $this->assertTrue(class_exists("Release\Handler\Handler"), 'class Handler must exists');
+        $this->assertTrue(class_exists("Release\Handler\AbstractHandler"), 'class AbstractHandler must exists');
         $this->assertTrue(class_exists("Release\Handler\ComposerHandler"), 'class ComposerHandler must exists');
         $io = $this->getMockBuilder('Release\IO\ComposerIO')->disableOriginalConstructor()->getMock();
-        $this->assertInstanceOf("Release\Handler\Handler", new ComposerHandler($io), 'ComposerHandler must extends Handler class');
+        $this->assertInstanceOf("Release\Handler\AbstractHandler", new ComposerHandler($io), 'ComposerHandler must extends AbstractHandler class');
     }
 
     /**
