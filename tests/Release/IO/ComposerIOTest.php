@@ -97,4 +97,16 @@ class ComposerIOTest extends \PHPUnit_Framework_TestCase
         $composerIO = new ComposerIO(vfsStream::url($fullPath));
         $composerIO->save($expected);
     }
+
+    /**
+     * @brief Test that fix #2
+     * @details Issue #2 - Recursion Problem
+     */
+    public function testRecursionProblem()
+    {
+        $this->setExpectedExceptionRegExp('Release\IO\Exception\IOException', '/composer.json not found.*/');
+        $composerIO = new ComposerIO('/');
+        $composerIO->load();
+    }
+
 }
