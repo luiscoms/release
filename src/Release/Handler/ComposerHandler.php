@@ -3,6 +3,7 @@
 namespace Release\Handler;
 
 use Naneau\SemVer\Parser;
+use Release\Handler\Exception\HandlerException;
 use Release\IO\ComposerIO;
 use Release\Version;
 
@@ -32,12 +33,10 @@ class ComposerHandler extends AbstractHandler
     {
         $ret = array(0, 0, 1, '', '');
         $json = json_decode($this->_io->load(), true);
-        if (empty($json)) {
-            // throw new \InvalidArgumentException("Invalid ");
-            return $ret;
+        if (!is_array($json)) {
+            throw new HandlerException("Couldn't parse version from io");
         }
         if (!isset($json['version'])) {
-            // throw new \InvalidArgumentException("Invalid ");
             return $ret;
         }
         $vString = $json['version'];

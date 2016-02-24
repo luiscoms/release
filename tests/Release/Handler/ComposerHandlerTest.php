@@ -26,6 +26,17 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, (string) $version);
     }
 
+    /**
+     * @dataProvider invalidNotJSONFilesProvider
+     */
+    public function testGetVersionWithInvalidComposerFile($content)
+    {
+        $this->setExpectedExceptionRegExp('Release\Handler\Exception\HandlerException', '/Couldn\'t parse version.*/');
+        $io = $this->getIOInstance($content);
+        $composerHandler = new ComposerHandler($io);
+        $version = $composerHandler->getVersion();
+    }
+
     private function getIOInstance($content)
     {
         // TODO Change to Mock of IOInterface
@@ -42,5 +53,10 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
     public function validStaticFilesProvider()
     {
         return include dirname(dirname(__DIR__)).'/fixtures/valid/static/composerhandler.php';
+    }
+
+    public function invalidNotJSONFilesProvider()
+    {
+        return include dirname(dirname(__DIR__)).'/fixtures/invalid/not_json/composerhandler.php';
     }
 }
