@@ -21,6 +21,12 @@ if [ -z $1 ];then
     exit;
 fi
 
+docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release bash -c 'cd tests; humbug'
+
+if [ -z $2 ];then
+    exit;
+fi
+
 docker run --rm -it \
             -e "COVERALLS_RUN_LOCALLY=1" \
             -e "COVERALLS_REPO_TOKEN="$COVERALLS_REPO_TOKEN \
