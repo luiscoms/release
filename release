@@ -23,11 +23,13 @@ if (!defined('RELEASE_COMPOSER_INSTALL')) {
 
 require RELEASE_COMPOSER_INSTALL;
 
+use Release\Command\Bump;
 use Release\Command\Current;
 use Symfony\Component\Console\Application;
 
 $command = new Current();
 $application = new Application();
+$application->add(new Bump());
 $application->add($command);
 $application->setDefaultCommand($command->getName());
 $application->run();
