@@ -28,20 +28,20 @@ Let's consider the `composer.json` file
 
 To view current version
 
-    vendor/bin/release
+    vendor/bin/release [current]
     0.0.1
 
 To update patch
 
-    vendor/bin/release --patch|--bugfix
+    vendor/bin/release bump --patch|--bugfix
     0.0.2
 
 To update minor
 
-    vendor/bin/release --minor|--feature
+    vendor/bin/release bump --minor|--feature
     0.1.0
 
 To update major
 
-    vendor/bin/release --major
+    vendor/bin/release bump --major
     1.0.0

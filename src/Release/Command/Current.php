@@ -2,7 +2,7 @@
 
 namespace Release\Command;
 
-use Release\Handler\ComposerHandler;
+use Release\Handler\HandlerFactory;
 use Release\IO\ComposerIO;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,8 +20,7 @@ class Current extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
-        $handler = new ComposerHandler(new ComposerIO(getcwd()));
+        $handler = HandlerFactory::create();
         $output->writeln((string) $handler->getVersion());
     }
 }
