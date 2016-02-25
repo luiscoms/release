@@ -15,20 +15,17 @@ if ! [ -d vendor ]; then
 fi
 
 docker run --rm -it -v ${PJ_ROOT}:/release luiscoms/release chmod 444 tests/fixtures/invalid/perms/*/composer.json
-docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit --testdox -vc tests/
+# docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit --testdox -vc tests/
+docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit -vc tests/
 
-if [ -z $1 ];then
-    exit;
+if ! [ -z $1 ];then
+    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release bash -c 'cd tests; humbug'
 fi
 
-docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release bash -c 'cd tests; humbug'
-
-if [ -z $2 ];then
-    exit;
-fi
-
-docker run --rm -it \
+if ! [ -z $2 ];then
+    docker run --rm -it \
             -e "COVERALLS_RUN_LOCALLY=1" \
             -e "COVERALLS_REPO_TOKEN="$COVERALLS_REPO_TOKEN \
             -v ${PJ_ROOT}:/release luiscoms/release \
             vendor/bin/coveralls -v
+fi
