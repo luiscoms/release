@@ -5,7 +5,7 @@ namespace Release\Handler;
 use Release\IO\IOInterface;
 use Release\Version;
 
-abstract class Handler
+abstract class AbstractHandler
 {
 
     public function __construct(IOInterface $io)

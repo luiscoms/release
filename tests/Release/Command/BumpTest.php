@@ -2,24 +2,23 @@
 
 namespace Release\Command;
 
-// http://symfony.com/doc/current/components/console/introduction.html
 use Release\Command\Current;
 use Release\Version;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class CurrentTest extends \PHPUnit_Framework_TestCase
+class BumpTest extends \PHPUnit_Framework_TestCase
 {
-    public function testViewCurrentVersion()
+    public function testUpdatePatch()
     {
         $application = new Application();
-        $application->add(new Current($this->getFactory()));
+        $application->add(new Bump($this->getFactory()));
 
-        $command = $application->find('current');
+        $command = $application->find('bump');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array('command' => $command->getName()));
 
-        $this->assertRegExp("/\b0\.0\.1\b/", $commandTester->getDisplay());
+        $this->assertRegExp("/\b0\.0\.26\b/", $commandTester->getDisplay());
     }
 
     private function getFactory()
@@ -28,9 +27,9 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-        $handler->expects($this->any())
+        $handler->expects($this->once())
              ->method('getVersion')
-             ->willReturn(new Version(0, 0, 1));
+             ->willReturn(new Version(0, 0, 25));
 
         $factory = $this->getMockBuilder('Release\Handler\HandlerFactory')
                     ->getMock();

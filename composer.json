@@ -1,5 +1,6 @@
 {
     "name": "luiscoms/release",
+    "version": "0.0.3",
     "description": "PHP library to increment package version and release project",
     "license": "MIT",
     "authors": [
@@ -22,5 +23,7 @@
         "mikey179/vfsStream": "~1.6",
         "satooshi/php-coveralls": "~1.0"
     },
-    "bin": ["release"]
+    "bin": [
+        "release"
+    ]
 }

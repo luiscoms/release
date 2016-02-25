@@ -2,14 +2,16 @@
 
 namespace Release\Handler;
 
+use Release\Version;
+
 class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
 {
     protected function assertPreConditions()
     {
-        $this->assertTrue(class_exists("Release\Handler\Handler"), 'class Handler must exists');
+        $this->assertTrue(class_exists("Release\Handler\AbstractHandler"), 'class AbstractHandler must exists');
         $this->assertTrue(class_exists("Release\Handler\ComposerHandler"), 'class ComposerHandler must exists');
         $io = $this->getMockBuilder('Release\IO\ComposerIO')->disableOriginalConstructor()->getMock();
-        $this->assertInstanceOf("Release\Handler\Handler", new ComposerHandler($io), 'ComposerHandler must extends Handler class');
+        $this->assertInstanceOf("Release\Handler\AbstractHandler", new ComposerHandler($io), 'ComposerHandler must extends AbstractHandler class');
     }
 
     /**
@@ -24,6 +26,39 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Release\Version', $version, 'Method getVersion should return an instance of Release\Version');
 
         $this->assertEquals($expected, (string) $version);
+    }
+
+    /**
+     * @dataProvider invalidNotJSONFilesProvider
+     */
+    public function testGetVersionWithInvalidComposerFile($content)
+    {
+        $this->setExpectedExceptionRegExp('Release\Handler\Exception\HandlerException', '/Couldn\'t parse version.*/');
+        $io = $this->getIOInstance($content);
+        $composerHandler = new ComposerHandler($io);
+        $version = $composerHandler->getVersion();
+    }
+
+    public function testSetVersion()
+    {
+        $version = new Version(1, 0, 0);
+
+        $io = $this->getMockBuilder('Release\IO\ComposerIO')
+                    ->disableOriginalConstructor()
+                    ->getMock();
+
+        $io->expects($this->once())
+             ->method('save');
+
+        $io->expects($this->exactly(2))
+             ->method('load')
+             ->will($this->onConsecutiveCalls('{}', '{"version":"1.0.0"}'));
+
+        // $io = $this->getIOInstance($content);
+        $composerHandler = new ComposerHandler($io);
+        $composerHandler->setVersion($version);
+
+        $this->assertEquals($version, $composerHandler->getVersion());
     }
 
     private function getIOInstance($content)
@@ -42,5 +77,10 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
     public function validStaticFilesProvider()
     {
         return include dirname(dirname(__DIR__)).'/fixtures/valid/static/composerhandler.php';
+    }
+
+    public function invalidNotJSONFilesProvider()
+    {
+        return include dirname(dirname(__DIR__)).'/fixtures/invalid/not_json/composerhandler.php';
     }
 }

@@ -58,7 +58,7 @@ class ComposerIO implements IOInterface
             }
         }
 
-        if (!$found) {
+        if (!$found && $directory != dirname($directory)) {
             return $this->getComposerFileRecursive(dirname($directory));
         }
         return $found;
