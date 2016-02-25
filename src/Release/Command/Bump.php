@@ -10,6 +10,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Bump extends Command
 {
+    private $factory;
+
     public function __construct(HandlerFactory $factory)
     {
         $this->factory = $factory;
