@@ -2,6 +2,8 @@
 
 namespace Release\Handler;
 
+use Release\Version;
+
 class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
 {
     protected function assertPreConditions()
@@ -35,6 +37,28 @@ class ComposerHandlerTest extends \PHPUnit_Framework_TestCase
         $io = $this->getIOInstance($content);
         $composerHandler = new ComposerHandler($io);
         $version = $composerHandler->getVersion();
+    }
+
+    public function testSetVersion()
+    {
+        $version = new Version(1, 0, 0);
+
+        $io = $this->getMockBuilder('Release\IO\ComposerIO')
+                    ->disableOriginalConstructor()
+                    ->getMock();
+
+        $io->expects($this->once())
+             ->method('save');
+
+        $io->expects($this->exactly(2))
+             ->method('load')
+             ->will($this->onConsecutiveCalls('{}', '{"version":"1.0.0"}'));
+
+        // $io = $this->getIOInstance($content);
+        $composerHandler = new ComposerHandler($io);
+        $composerHandler->setVersion($version);
+
+        $this->assertEquals($version, $composerHandler->getVersion());
     }
 
     private function getIOInstance($content)
