@@ -11,6 +11,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Bump extends Command
 {
+    public function __construct(HandlerFactory $factory)
+    {
+        $this->factory = $factory;
+        parent::__construct();
+    }
+
     protected function configure()
     {
         $this
@@ -27,7 +33,7 @@ class Bump extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $handler = HandlerFactory::create();
+        $handler = $this->factory->create();
         $version = $handler->getVersion();
         $version->updatePatch();
         $handler->setVersion($version);

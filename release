@@ -28,9 +28,10 @@ use Release\Command\Current;
 use Release\Handler\HandlerFactory;
 use Symfony\Component\Console\Application;
 
-$command = new Current(new HandlerFactory());
+$facoty = new HandlerFactory();
+$command = new Current($facoty);
 $application = new Application();
-$application->add(new Bump());
+$application->add(new Bump($facoty));
 $application->add($command);
 $application->setDefaultCommand($command->getName());
 $application->run();
