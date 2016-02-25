@@ -10,6 +10,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Current extends Command
 {
+    private $factory;
+
+    public function __construct(HandlerFactory $factory)
+    {
+        $this->factory = $factory;
+        parent::__construct();
+    }
+
     protected function configure()
     {
         $this
@@ -20,7 +28,7 @@ class Current extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $handler = HandlerFactory::create();
+        $handler = $this->factory->create();
         $output->writeln((string) $handler->getVersion());
     }
 }

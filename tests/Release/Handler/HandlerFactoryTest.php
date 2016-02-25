@@ -12,14 +12,21 @@ class HandlerFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testCreateHandler()
     {
-        $handler = HandlerFactory::create();
+        $factory = $this->getFactory();
+        $handler = $factory->create();
         $this->assertInstanceOf("Release\Handler\AbstractHandler", $handler, 'HandlerFactory must return an AbstractHandler object');
 
     }
 
     public function testCreateDefaultHandler()
     {
-        $handler = HandlerFactory::create();
+        $factory = $this->getFactory();
+        $handler = $factory->create();
         $this->assertInstanceOf("Release\Handler\ComposerHandler", $handler, 'HandlerFactory must return an ComposerHandler object as default');
+    }
+
+    private function getFactory()
+    {
+        return new HandlerFactory();
     }
 }

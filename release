@@ -25,9 +25,10 @@ require RELEASE_COMPOSER_INSTALL;
 
 use Release\Command\Bump;
 use Release\Command\Current;
+use Release\Handler\HandlerFactory;
 use Symfony\Component\Console\Application;
 
-$command = new Current();
+$command = new Current(new HandlerFactory());
 $application = new Application();
 $application->add(new Bump());
 $application->add($command);

@@ -10,7 +10,7 @@ namespace Release\Handler;
  */
 class HandlerFactory
 {
-    public static function create($class = 'ComposerHandler')
+    public function create($class = 'ComposerHandler')
     {
         switch ($class) {
             case 'ComposerHandler':
