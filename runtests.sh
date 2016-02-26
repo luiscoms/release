@@ -9,14 +9,32 @@ fi
 
 PJ_ROOT=$(pwd)
 
+tags=( php5.6 php7.0 )
+for tag in "${tags[@]}"; do
+    # build the image if not exists
+    # docker build url#branch:directory
+    # docker build -t luiscoms/release:$tag https://github.com/luiscoms/release.git#develop:$tag
+    if [ -z $(docker images -q luiscoms/release:$tag) ]; then
+        echo "Bulding image "$tag
+        docker build -t luiscoms/release:$tag -f $tag/Dockerfile ${PJ_ROOT}
+    fi
+done
+
 if ! [ -d vendor ]; then
     echo "Running composer install"
     docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release composer install
 fi
 
-docker run --rm -it -v ${PJ_ROOT}:/release luiscoms/release chmod 444 tests/fixtures/invalid/perms/*/composer.json
-# docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit --testdox -vc tests/
-docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit -vc tests/
+# setting up permissions
+chmod 444 tests/fixtures/invalid/perms/*/composer.json
+
+# for each tag run the tests
+for tag in "${tags[@]}"; do
+    # build the image if not exists
+    echo "Rinning tests on "$tag
+    # docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release phpunit --testdox -vc tests/
+    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release:$tag phpunit -vc tests/
+done
 
 if ! [ -z $1 ];then
     docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release bash -c 'cd tests; humbug'

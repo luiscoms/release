@@ -1,4 +1,4 @@
-FROM php:5.6-cli
+FROM php:7.0-cli
 
 MAINTAINER Luis Fernando Gomes <dev@luiscoms.com.br>
 
@@ -13,8 +13,6 @@ RUN apt-get update \
 RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php \
 	&& php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer \
 	&& php -r "unlink('composer-setup.php');"
-# RUN curl -sS https://getcomposer.org/installer | php \
-# 	&& mv composer.phar /usr/local/bin/composer
 
 ENV COMPOSER_HOME=/opt/composer
 
@@ -28,10 +26,12 @@ RUN cat /usr/src/php/php.ini-production | sed 's/^;\(date.timezone.*\)/\1 \"Amer
 # install global libraries
 RUN docker-php-ext-install zip && \
 		composer global require \
-			phpunit/phpunit:~4 \
+			phpunit/phpunit \
 			squizlabs/php_codesniffer \
 			humbug/humbug:~1.0@dev
 
-# Install xdebug
-RUN pecl install xdebug \
+# Install xdebug (beta with php7)
+RUN pecl install xdebug-beta \
 	&& docker-php-ext-enable xdebug
+
+ADD ./ /release
