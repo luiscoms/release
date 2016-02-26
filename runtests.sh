@@ -9,7 +9,7 @@ fi
 
 PJ_ROOT=$(pwd)
 
-tags=( php5.6 php7.0 )
+tags=( php5.5 php5.6 php7.0 )
 for tag in "${tags[@]}"; do
     # build the image if not exists
     # docker build url#branch:directory
