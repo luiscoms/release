@@ -10,6 +10,7 @@ fi
 PJ_ROOT=$(pwd)
 
 tags=( php5.5 php5.6 php7.0 )
+latest=${tags[$(expr ${#tags[@]} - 1)]}
 for tag in "${tags[@]}"; do
     # build the image if not exists
     # docker build url#branch:directory
@@ -22,7 +23,7 @@ done
 
 if ! [ -d vendor ]; then
     echo "Running composer install"
-    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release composer install
+    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release:${latest} composer install
 fi
 
 # setting up permissions
@@ -37,13 +38,13 @@ for tag in "${tags[@]}"; do
 done
 
 if ! [ -z $1 ];then
-    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release bash -c 'cd tests; humbug'
+    docker run --rm -it -v ${PJ_ROOT}:/release -u `stat . -c "%u:%g"` luiscoms/release:${latest} bash -c 'cd tests; humbug'
 fi
 
 if ! [ -z $2 ];then
     docker run --rm -it \
             -e "COVERALLS_RUN_LOCALLY=1" \
             -e "COVERALLS_REPO_TOKEN="$COVERALLS_REPO_TOKEN \
-            -v ${PJ_ROOT}:/release luiscoms/release \
+            -v ${PJ_ROOT}:/release luiscoms/release${latest} \
             vendor/bin/coveralls -v
 fi
