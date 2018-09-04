@@ -25,11 +25,19 @@ require RELEASE_COMPOSER_INSTALL;
 
 use Release\Command\Bump;
 use Release\Command\Current;
+use Release\Event\EventManager;
 use Release\Handler\HandlerFactory;
 use Symfony\Component\Console\Application;
 
+$eventManager = new EventManager;
+$eventManager->attach('current', function($e) {
+    echo $e->getName() . "\n";
+    print_r($e->getParams());
+    return 'Hello';
+});
+
 $facoty = new HandlerFactory();
-$command = new Current($facoty);
+$command = new Current($facoty, $eventManager);
 $application = new Application();
 $application->add(new Bump($facoty));
 $application->add($command);

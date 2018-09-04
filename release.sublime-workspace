@@ -1,0 +1,920 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Eve",
+				"EventManager"
+			],
+			[
+				"exi",
+				"exit"
+			],
+			[
+				"php",
+				"php7"
+			],
+			[
+				"di",
+				"directory"
+			],
+			[
+				"COmposer",
+				"ComposerIO"
+			],
+			[
+				"json_",
+				"json_decode"
+			],
+			[
+				"IO",
+				"IOException"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"dir",
+				"dirname"
+			],
+			[
+				"thi",
+				"this"
+			],
+			[
+				"pr",
+				"projectRoot"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"ver",
+				"version"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"pre",
+				"preRelease"
+			],
+			[
+				"pat",
+				"patch"
+			],
+			[
+				"mi",
+				"minor"
+			],
+			[
+				"int",
+				"intval"
+			],
+			[
+				"sum",
+				"sumDigits"
+			],
+			[
+				"DO",
+				"DOCKER_TAG"
+			],
+			[
+				"DOC",
+				"DOCKER_REPO"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/luiscoms/Dropbox/WorkNotes/cvs.txt",
+			"settings":
+			{
+				"buffer_size": 2187,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/luiscoms/Dropbox/WorkNotes/docker.txt",
+			"settings":
+			{
+				"buffer_size": 952,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/luiscoms/Downloads/arte.txt",
+			"settings":
+			{
+				"buffer_size": 2397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/luiscoms/Dropbox/luiscoms.com.br/hack.txt",
+			"settings":
+			{
+				"buffer_size": 1899,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/luiscoms/Dropbox/Profissional/Absoluta/geral.txt",
+			"settings":
+			{
+				"buffer_size": 4109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Release/Command/Bump.php",
+			"settings":
+			{
+				"buffer_size": 1102,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "release",
+			"settings":
+			{
+				"buffer_size": 1196,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Release/Command/Current.php",
+			"settings":
+			{
+				"buffer_size": 992,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Release/Event/EventManager.php",
+			"settings":
+			{
+				"buffer_size": 721,
+				"line_ending": "Unix",
+				"name": "<?php"
+			}
+		},
+		{
+			"file": "src/Release/Handler/GitHandler.php",
+			"settings":
+			{
+				"buffer_size": 1676,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 230.0,
+		"last_filter": "html",
+		"selected_items":
+		[
+			[
+				"html",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"convert",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"giti",
+				"Gitignore: New gitignore"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"ssh",
+				"Set Syntax: SSH Config"
+			],
+			[
+				"ssh co",
+				"Set Syntax: SSH Config"
+			],
+			[
+				"sshc",
+				"Set Syntax: SSH Config"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"wr",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"wre",
+				"Word Wrap: Toggle"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 462.0
+	},
+	"console":
+	{
+		"height": 280.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/luiscoms/LCS/github/release"
+	],
+	"file_history":
+	[
+		"/home/luiscoms/Downloads/Optimizepress v2.2.2.1 & Clubhouse templates Pack/Read ME.txt",
+		"/home/luiscoms/Downloads/Optimizepress v2.2.2.1 & Clubhouse templates Pack/installing templates.txt",
+		"/home/luiscoms/Downloads/Optimizepress v2.2.2.1 & Clubhouse templates Pack/op_theme_v2.2.2.1 NULLED/license code.txt",
+		"/home/luiscoms/LCS/github/release/vendor/guzzle/guzzle/docs/requirements.txt",
+		"/home/luiscoms/.ssh/config",
+		"/home/luiscoms/Dropbox/luiscoms.com.br/hack.txt",
+		"/home/luiscoms/Dropbox/WorkNotes/ssh_config",
+		"/home/luiscoms/LCS/github/Seguro-de-Carros/Dockerfile",
+		"/home/luiscoms/LCS/bitbucket/aromas-e-pocoes-2.0/frontend/Dockerfile",
+		"/home/luiscoms/LCS/github/release/release.xml.dist",
+		"/home/luiscoms/Dropbox/Study/study_notes.txt",
+		"/home/luiscoms/LCS/github/release/runtests.sh",
+		"/home/luiscoms/LCS/github/release/php5.5/Dockerfile",
+		"/home/luiscoms/LCS/github/release/composer.json",
+		"/home/luiscoms/LCS/github/release/php7/Dockerfile",
+		"/home/luiscoms/LCS/github/release/.travis.yml",
+		"/home/luiscoms/Dropbox/WorkNotes/docker.txt",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/static/composerhandler.php",
+		"/home/luiscoms/LCS/github/release/src/Release/Handler/ComposerHandler.php",
+		"/home/luiscoms/LCS/github/release/release",
+		"/home/luiscoms/LCS/github/release/tests/Release/Handler/HandlerFactoryTest.php",
+		"/home/luiscoms/LCS/github/release/src/Release/Command/Bump.php",
+		"/home/luiscoms/LCS/github/release/src/Release/Handler/HandlerFactory.php",
+		"/home/luiscoms/LCS/github/release/tests/Release/IO/ComposerIOTest.php",
+		"/home/luiscoms/LCS/github/release/src/Release/IO/ComposerIO.php",
+		"/home/luiscoms/LCS/github/release/src/Release/Command/Current.php",
+		"/home/luiscoms/LCS/github/release/README.md",
+		"/home/luiscoms/LCS/github/release/tests/phpunit.xml.dist",
+		"/home/luiscoms/LCS/github/release/.coveralls.yml",
+		"/home/luiscoms/LCS/github/release/.gitignore",
+		"/home/luiscoms/LCS/github/release/tests/humbug.json.dist",
+		"/home/luiscoms/LCS/github/release/humbug.json.dist",
+		"/home/luiscoms/LCS/github/release/tests/Release/Command/CurrentTest.php",
+		"/home/luiscoms/Dropbox/Profissional/digitalmobi/digitalmobi.txt",
+		"/home/luiscoms/LCS/github/release/src/Release/Version.php",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/static/composerhanler.php",
+		"/home/luiscoms/LCS/github/release/.editorconfig",
+		"/home/luiscoms/LCS/github/release/src/Release/IO/IOInterface.php",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/invalid/perms/composerio_structures.php",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/save/composerio_structures.php",
+		"/home/luiscoms/LCS/github/release/src/Release/IO/IO.php",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/invalid/composerio_structures.php",
+		"/home/luiscoms/LCS/github/release/src/Release/IO/Exception/IOException.php",
+		"/home/luiscoms/LCS/github/release/src/Release/IO/Exception/IOExpeption.php",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/three/composer.json",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/one/composer.json",
+		"/home/luiscoms/LCS/github/release/tests/fixtures/valid/two/composer.json",
+		"/home/luiscoms/LCS/github/release/tests/tmp/../composerio_structures.php",
+		"/home/luiscoms/LCS/github/release/tests/phpunit.xml",
+		"/home/luiscoms/LCS/github/release/release.sublime-project",
+		"/home/luiscoms/LCS/github/release/tests/Release/VersionTest.php",
+		"/home/luiscoms/.editorconfig",
+		"/home/luiscoms/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/Dockerfile",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/phpunit.xml",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/Dockerfile_spec.rb",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/docker-phpunit.sh",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/app.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/test4.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/test5.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/test6.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/test2.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/bootstrap.php",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/.gitignore",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/docker-build.sh",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/docker-config.sh",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/docker-rspec.sh",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/Gemfile",
+		"/home/luiscoms/LCS/github/eldorado-sample-test/docker/Dockerfile_rspec.rb",
+		"/home/luiscoms/LCS/tga/pj_suat/head/suat/scripts/report-git-diffs.sh",
+		"/home/luiscoms/Dropbox/Profissional/Absoluta/tga/suat/suat - notes.txt",
+		"/home/luiscoms/Dropbox/bin/ubuntu-commands.sh",
+		"/home/luiscoms/LCS/github/grocery-crud/application/views/example.php",
+		"/home/luiscoms/Dropbox/Profissional/Absoluta/tga/suat/composer_su/.sublime-project",
+		"/home/luiscoms/Dropbox/progs/sublime-text/Preferences.sublime-settings",
+		"/home/luiscoms/Dropbox/progs/sublime-text/Package Control.sublime-settings",
+		"/home/luiscoms/Dropbox/bin/customise-bash.sh",
+		"/home/luiscoms/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/luiscoms/Downloads/Serial Number Tablets Caixa Verde.csv.html",
+		"/media/luiscoms/My Disc/volume 1/AUTORUN.INF",
+		"/home/luiscoms/Downloads/Serial Number Tablets Caixa Verde 30.11.csv",
+		"/home/luiscoms/Downloads/Serial Number Tablets Caixa Verde 30.11.xlsx",
+		"/home/luiscoms/Downloads/CAGEDEST092015_head100.txt",
+		"/etc/hosts"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".js",
+			"fileId",
+			"fileid",
+			".php",
+			"117024",
+			"86799d0fbf736fd82d3759492b01d4b9",
+			"?",
+			"86799d0fbf736fd82d3759492b01d4b9",
+			".js",
+			"http://",
+			".zip",
+			"deli",
+			"BIN_DOCKER",
+			"events",
+			"group",
+			"up ",
+			"json",
+			"var_",
+			"RecursiveDirectoryIterator",
+			"this",
+			"validStaticFilesProvider",
+			"InputOption",
+			"\\Exception",
+			"vfsStreamWrapper",
+			"vfsStreamDirectory",
+			"var",
+			"dirs",
+			"newDirectory",
+			"newdirect",
+			"newdi",
+			"vfsStream",
+			"assert",
+			"directory",
+			", $fromDir",
+			"testVersion",
+			"  ",
+			"$c",
+			"container",
+			"?",
+			"\"================\"",
+			"describe",
+			"git",
+			"git ",
+			"git",
+			"tag",
+			"ocup",
+			"car",
+			"ocu",
+			"car"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/luiscoms/Dropbox/WorkNotes/cvs.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1150,
+								1150
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"git_savvy.file_path": "/home/luiscoms/Dropbox/WorkNotes/cvs.txt",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/luiscoms/Dropbox/WorkNotes/docker.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 952,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"git_savvy.file_path": "/home/luiscoms/Dropbox/WorkNotes/docker.txt",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/luiscoms/Downloads/arte.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2397,
+								2397
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"git_savvy.file_path": "/home/luiscoms/Downloads/arte.txt",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/luiscoms/Dropbox/luiscoms.com.br/hack.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								728,
+								728
+							]
+						],
+						"settings":
+						{
+							"git_savvy.file_path": "/home/luiscoms/Dropbox/luiscoms.com.br/hack.txt",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 374.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/luiscoms/Dropbox/Profissional/Absoluta/geral.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"git_savvy.file_path": "/home/luiscoms/Dropbox/Profissional/Absoluta/geral.txt",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Release/Command/Bump.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								324,
+								324
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"git_savvy.file_path": "/home/luiscoms/LCS/github/release/src/Release/Command/Bump.php",
+							"git_savvy.repo_path": "/home/luiscoms/LCS/github/release",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "release",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"git_savvy.file_path": "/home/luiscoms/LCS/github/release/release",
+							"git_savvy.repo_path": "/home/luiscoms/LCS/github/release",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/Release/Command/Current.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								823,
+								823
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"git_savvy.file_path": "/home/luiscoms/LCS/github/release/src/Release/Command/Current.php",
+							"git_savvy.repo_path": "/home/luiscoms/LCS/github/release",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/Release/Event/EventManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"git_savvy.file_path": "/home/luiscoms/LCS/github/release/src/Release/Event/Event.php",
+							"git_savvy.repo_path": "/home/luiscoms/LCS/github/release",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Release/Handler/GitHandler.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								449,
+								449
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"git_savvy.file_path": "/home/luiscoms/LCS/github/release/src/Release/Handler/ComposerHandler.php",
+							"git_savvy.repo_path": "/home/luiscoms/LCS/github/release",
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "release.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"req",
+				"vendor/guzzle/guzzle/docs/requirements.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

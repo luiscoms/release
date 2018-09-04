@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<release>
+    <handlers>
+        <handler src="\Release\Handler\GitHandler" description="Git Handler" priority="0"/>
+    </handlers>
+</release>
